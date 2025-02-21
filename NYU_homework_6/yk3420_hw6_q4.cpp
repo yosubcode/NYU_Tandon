@@ -2,7 +2,7 @@
 #include <cmath>
 using namespace std;
 
-void printDivisors (int num); // Needs comments here!!
+void printDivisors (int num); // Needs comments
 
 int main(){
 
