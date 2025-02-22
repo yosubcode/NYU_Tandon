@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 int printMonthCalender(int numOfDays, int startingDay);
@@ -16,11 +15,20 @@ int leapYear(int year);
 void printYearCalender(int year, int startingDay);
 // Prints a full calendar for the specified year.  
 // - year: The year for which the calendar should be generated.  
-// - startingDay: The weekday on which January 1st falls (1 = Monday, ..., 7 = Sunday).
+// - startingDay: The day on which January 1st falls (1 = Monday, ..., 7 = Sunday).
 
 
 int main(){
-    printYearCalender(2025, 3);
+
+    int year, day;
+
+    cout<<"Enter the year for which you want to display the calendar: ";
+    cin>>year;
+    cout<<"Enter the day for January 1st (1 = Monday, 2 = Tuesday, ..., 7 = Sunday): ";
+    cin>>day;
+
+    printYearCalender(year, day);
+
     return 0;
 }
 
@@ -50,7 +58,7 @@ int printMonthCalender(int numOfDays, int startingDay){
 }
 
 int leapYear(int year){
-    if (year%4 == 0)
+    if (year%4 == 0 && year%100 != 0) || (year%400 == 0)
         return 1;
     else
         return 0;
