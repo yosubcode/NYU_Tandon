@@ -39,10 +39,10 @@ int printMonthCalender(int numOfDays, int startingDay){
     for (int i=1; i<startingDay; i++)
         cout<<"\t";
 
-    for (int i=1; i<=numOfDays; i++){
-        cout<<i<<"\t";
+    for (int j=1; j<=numOfDays; j++){
+        cout<<j<<"\t";
 
-        if ((i+startingDay-1)%7==0)
+        if ((j+startingDay-1)%7==0)
             cout<<endl;
     }
     cout<<endl;
@@ -58,7 +58,7 @@ int printMonthCalender(int numOfDays, int startingDay){
 }
 
 int leapYear(int year){
-    if (year%4 == 0 && year%100 != 0) || (year%400 == 0)
+    if ((year%4 == 0 && year%100 != 0) || (year%400 == 0))
         return 1;
     else
         return 0;
