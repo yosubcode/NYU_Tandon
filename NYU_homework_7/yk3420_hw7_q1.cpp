@@ -32,13 +32,17 @@ int main(){
     return 0;
 }
 
+
 // Functions
 int printMonthCalender(int numOfDays, int startingDay){
+    // The header for weekdays
     cout<<"Mon"<<"\t"<<"Tue"<<"\t"<<"Wed"<<"\t"<<"Thr"<<"\t"<<"Fri"<<"\t"<<"Sat"<<"\t"<<"Sun"<<endl;
 
+    // Adjusting initial spacing
     for (int i=1; i<startingDay; i++)
         cout<<"\t";
-
+    
+    // Printing the days of the month
     for (int j=1; j<=numOfDays; j++){
         cout<<j<<"\t";
 
@@ -48,15 +52,17 @@ int printMonthCalender(int numOfDays, int startingDay){
     cout<<endl;
     cout<<endl;
 
+    // Calculating the last day's weekday
     int finishingDay = (numOfDays%7) + startingDay-1;
     if (finishingDay==0)
-        return 7;
+        return 7; // If the last day falls on a Sunday, return 7
     else if (finishingDay>0 && finishingDay<=7)
         return finishingDay;
     else
         return finishingDay-7;
 }
 
+// Function to check if a given year is a leap year
 int leapYear(int year){
     if ((year%4 == 0 && year%100 != 0) || (year%400 == 0))
         return 1;
@@ -64,6 +70,7 @@ int leapYear(int year){
         return 0;
 }
 
+// Function to print the full calendar for a given year
 void printYearCalender(int year, int startingDay){
     cout<<"January "<<year<<endl;
     int January   = printMonthCalender(31, startingDay);
