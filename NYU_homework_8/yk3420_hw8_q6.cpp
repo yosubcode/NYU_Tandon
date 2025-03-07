@@ -73,3 +73,29 @@ void convertToX(string& text, int startingPointer, int finishingPointer) {
 bool isDigit(char c) {
     return (c >= '0' && c <= '9');  // Check ASCII range for digits
 }
+
+
+
+
+// 1. On text, each letter finishing with space = regardes as a letter.
+// 2. loop on each letter. If there is any char=false, if all digit, get each char's index number. 
+// 3. count char, make arr[count char], add the index number.
+// 4. loop on text and arr[count char]의 index number 모두 x 로 변환.
+
+
+
+// Write a program that reads in a line of text and outputs the line with all the digits in all integer
+// numbers replaced with 'x'.
+
+// Please enter a line of text:
+// My userID is john17 and my 4 digit pin is 1234 which is secret
+// My userID is john17 and my x digit pin is xxxx which is secret
+
+// Notes:
+// 1. If a digits is part of a word, then the digit is not changed to an 'x'. For example, john17 is
+// NOT changed to johnxx.
+
+// 2. You may assume that the text entered by the user will contain only letters (upper case or
+// lower case), digits and spaces.
+
+// 3. Think how to break down your implementation to functions.
