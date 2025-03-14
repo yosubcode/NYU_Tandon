@@ -10,11 +10,9 @@ bool areAnagrams(string str1, string str2);
 const int ASCII_RANGE = 128;
 
 int main() {
-    cout<<"This is error "<<endl;
-    cout<<"////////////////////////////////////////"<<endl;
-    
+
     string text1, text2;
-    // Test cases
+
     cout<<"Please enter a line of text:"<<endl;
     getline(cin, text1);
     cout<<endl;
@@ -23,9 +21,7 @@ int main() {
     getline(cin, text2);
     cout<<endl;
 
-    // string text1 = "Eleven plus two";
-    // string test2 = "Twelve plus one";
-    
+   
     // Test and output results
     if (areAnagrams(text1, text2))
         cout<<"Yes, "<<"\""<<text1<<"\" and \""<<text2<<"\" "<<"are anagrams";
@@ -39,7 +35,8 @@ int main() {
 string cleanString(string str) {
     string result;
     int strLength = str.length();
-    for (int i=0; i<strLength; i++) {
+
+    for (int i=0; i<strLength; i++) {          // ASCII Value
         if (str[i] >= 65 && str[i]<=90) {      // When str is Uppercase
             result += toLowercase(str[i]);     // convert it to lowercase.
         }
@@ -57,8 +54,8 @@ string cleanString(string str) {
 
 // Function to convert uppercase alphabet to lowercase 
 int toLowercase(int c) {
-    if (c >= 'A' && c <= 'Z') {  // ASCII uppercase: 65-90
-        return c + 32;           // Convert it to lowercase
+    if (c >= 'A' && c <= 'Z') {  // ASCII uppercase A-Z : 65-90
+        return c + 32;           // Convert it to lowercase (97-122)
     }
     return c;                    // No convert if already lowercase
 }
@@ -67,10 +64,8 @@ int toLowercase(int c) {
 // Function to check if two strings are anagrams
 bool areAnagrams(string str1, string str2) {
     // Clean both strings first
-    string cleanStr1 = cleanString(str1);
-    string cleanStr2 = cleanString(str2);
-    // cout<<cleanStr1<<endl;
-    // cout<<cleanStr2<<endl;
+    string cleanStr1 = cleanString(str1); // eg. "Eleven plus two" --> "elevenplustwo"
+    string cleanStr2 = cleanString(str2); // eg. "Twelve plus one" --> "twelveplusone"
 
     // If lengths differ after cleaning, they can't be anagrams
     if (cleanStr1.length() != cleanStr2.length()) {
@@ -78,15 +73,15 @@ bool areAnagrams(string str1, string str2) {
     }
     
     // Use array to count character frequencies (assuming ASCII characters)
-    int charCount[ASCII_RANGE] = {0};  // Initialize all to 0
+    int charCount[ASCII_RANGE] = {0};  // Initialize all to 0, ASCII_RANGE = 128
     
-    // Count characters in first string
+    // Count characters in cleanStr1
     for (int i=0; i<cleanStr1.length(); i++) {
         char c = cleanStr1[i];
         charCount[c]++;
     }
     
-    // Subtract counts for second string
+    // Subtract counts for cleanStr2
     for (int i=0; i<cleanStr2.length(); i++) {
         char c = cleanStr2[i];
         charCount[c]--;
