@@ -28,5 +28,9 @@ int main() {
     cout << "*p: " << *p << endl;
     cout << "r: " << r << endl;
 
+    cout<<endl;
+
+
+
     return 0;
 }

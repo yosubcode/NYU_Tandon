@@ -7,18 +7,18 @@ using namespace std;
 
 int main() {
     // Declare regular integer variables
-    int a, b;
+    int a = 5, b = 7;
     
     // Declare integer pointers
     int *ptrA, *ptrB;
     
 
     // Get input from user
-    cout << "Enter first integer (a): ";
-    cin >> a;
+    cout << "Enter first integer (a): " << a << endl;
+    // cin >> a;
     
-    cout << "Enter second integer (b): ";
-    cin >> b;
+    cout << "Enter second integer (b): " << b << endl;
+    // cin >> b;
     
 
     // Assign addresses of a and b to pointers
@@ -39,10 +39,10 @@ int main() {
     cout << "\nMemory addresses:" << endl;
     cout << "Address of a: "    << &a << endl;
     cout << "Address in ptrA: " << ptrA << endl;
-    cout << "Address in ptrA: " << &ptrA << endl;
+    cout << "Address in &ptrA: " << &ptrA << endl;
 
     cout << "Address of b: "    << &b << endl;
     cout << "Address in ptrB: " << ptrB << endl;
-    cout << "Address in ptrB: " << &ptrB << endl;
+    cout << "Address in &ptrB: " << &ptrB << endl;
     return 0;
 }

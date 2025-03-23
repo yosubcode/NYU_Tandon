@@ -153,7 +153,7 @@ void getPosNums4(int* arr, int arrSize, int** outPosArrPtr, int* outPosArrSizePt
         }
     }
     
-    *outPosArrSizePtr = posCount;     //// Update size through pointer
+    *outPosArrSizePtr = posCount;     // Update size through pointer
 }
 
 
